@@ -1,42 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KAMS ESSENTIALS - REAL LIGHT BLUE</title>
+<title>KAMS - DARKER ICY LUXE</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',sans-serif;background:#60A5FA;color:#1e293b;overflow-x:hidden}
-.bg{position:fixed;inset:0;background:linear-gradient(180deg,#3B82F6 0%,#60A5FA 25%,#93C5FD 55%,#BFDBFE 85%,#EFF6FF 100%);z-index:-2}
-.glass{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.6) 0%, transparent 60%);z-index:-1}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:rgba(255,255,255,0.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.8);position:sticky;top:0;z-index:10}
-.logo{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:2px;color:#1E40AF;font-size:13px}.logo span{display:block;font-size:8px;letter-spacing:3px;color:#3B82F6;font-family:'Poppins',sans-serif}
-.hero{text-align:center;padding:32px 18px 18px;max-width:560px;margin:0 auto}
-.h1{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;line-height:0.9;color:#1E3A8A;letter-spacing:-1px}.h1 i{font-family:'Syne',sans-serif;font-style:italic;font-weight:800;display:block;color:#FFFFFF;text-shadow:0 2px 20px rgba(59,130,246,0.6);font-size:36px;margin-top:4px}
-.sub{margin:12px auto;color:#1E40AF;font-size:12px;font-weight:600;background:rgba(255,255,255,0.7);display:inline-block;padding:6px 14px;border-radius:20px}
-.btn{display:inline-flex;background:#1E3A8A;color:#fff;padding:14px 26px;border-radius:30px;font-weight:800;font-size:12px;text-decoration:none;margin-top:14px;box-shadow:0 8px 24px rgba(30,58,138,0.3)}
-.list{max-width:480px;margin:10px auto;padding:0 14px;display:flex;flex-direction:column;gap:14px}
-.card{display:flex;gap:12px;background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,1);border-radius:20px;padding:12px;align-items:center;box-shadow:0 8px 32px rgba(59,130,246,0.15), inset 0 1px 0 rgba(255,255,255,1)}
-.card .img{background:linear-gradient(180deg,#fff,#EFF6FF);border-radius:14px;min-width:96px;max-width:96px;height:96px;display:flex;align-items:center;justify-content:center;border:1px solid #DBEAFE;flex-shrink:0}
-.card h3{font-size:14px;color:#1E3A8A;line-height:1.2;font-weight:700}
-.card .price{color:#2563EB;font-weight:800;font-size:16px;margin:3px 0}
-.card .benefit{font-size:10px;color:#64748B;font-weight:500}
-.card .order{display:inline-block;background:#1E3A8A;color:#fff;padding:6px 14px;border-radius:20px;font-size:10px;font-weight:700;text-decoration:none;margin-top:6px}
-.footer{max-width:480px;margin:24px auto 0;text-align:center;padding:20px 14px;font-size:10px;color:#3B82F6;background:rgba(255,255,255,0.6);border-radius:20px 20px 0 0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',sans-serif;background:#0F172A;color:#E0F2FE}
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at top, #1E3A8A 0%, #172554 40%, #0F172A 100%);z-index:-2}
+.wrap{max-width:520px;margin:0 auto;padding:12px}
+.top{display:flex;justify-content:space-between;align-items:center;background:rgba(15,23,42,0.8);backdrop-filter:blur(20px);padding:12px 16px;border-radius:30px;border:1px solid rgba(59,130,246,0.3);box-shadow:0 0 20px rgba(59,130,246,0.2)}
+.hero{margin:16px 0;background:linear-gradient(135deg, rgba(30,58,138,0.6), rgba(15,23,42,0.9));border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 30px rgba(59,130,246,0.2)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:rgba(30,58,138,0.25);backdrop-filter:blur(16px);border:1px solid rgba(96,165,250,0.3);border-radius:16px;padding:12px;text-align:center;box-shadow:0 0 20px rgba(59,130,246,0.15), inset 0 1px 0 rgba(255,255,255,0.1)}
+.img{width:100%;height:90px;background:linear-gradient(180deg,#1E3A8A,#0F172A);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:6px 0;font-weight:800;font-size:11px;color:#93C5FD;border:1px solid rgba(96,165,250,0.3)}
+.price{color:#60A5FA;font-weight:800;font-size:14px;margin-top:4px}
+.order{display:block;margin-top:8px;background:#E0F2FE;color:#0F172A;padding:7px;border-radius:20px;font-size:10px;font-weight:800;text-decoration:none}
+.full{grid-column:1 / -1}
 </style></head><body>
-<div class="bg"></div><div class="glass"></div>
-<div class="nav"><div class="logo">KAMS ESSENTIALS<span>LIGHT BLUE • SILVER • ICY ✨</span></div><div style="font-size:10px;color:#1E40AF;font-weight:800">07010320816</div></div>
-<div class="hero">
-<div class="h1">ICY LUXE.<i>Future Skin.</i></div>
-<div class="sub">💙 Real Light Blue + Icy Silver Chrome • Bright Daylight Edition</div><br>
-<a class="btn" href="https://wa.me/2347010320816?text=Hi%20KAMS%20💙%20I%20love%20this%20light%20blue%20site!">💎 Shop on WhatsApp • 07010320816</a>
+<div class="bg"></div>
+<div class="wrap">
+<div class="top"><div style="font-family:'Syne',sans-serif;font-weight:800;letter-spacing:2px;font-size:14px;color:#93C5FD">ICY LUXE ✨</div><a href="https://wa.me/2347010320816" style="background:#25D366;color:#fff;padding:6px 12px;border-radius:20px;text-decoration:none;font-size:11px;font-weight:700">WhatsApp 07010320816</a></div>
+<div class="hero"><div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:16px">THE ICY COLLECTION —<br><span style="color:#60A5FA">NEW DROP - DARKER</span></div><div style="font-size:9px;color:#93C5FD;margin-top:6px">7 essentials for radiant, glassy skin.<br>Dark icy luxury edition.</div></div><div style="font-size:40px">👁️</div></div>
+<div class="grid">
+<div class="card"><div class="img">VIT C</div><div style="font-weight:700;font-size:12px">VITAMIN C LOTION</div><div style="font-size:9px;color:#60A5FA">Lighten • Bright</div><div class="price">₦10,000</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Vitamin%20C%20N10000">+ Add</a></div>
+<div class="card"><div class="img">CERAMIDE</div><div style="font-weight:700;font-size:12px">CERAMIDE CREAM</div><div style="font-size:9px;color:#60A5FA">Barrier • Repair</div><div class="price">₦8,000</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Ceramide%208000">+ Add</a></div>
+<div class="card"><div class="img">SHELF</div><div style="font-weight:700;font-size:12px">CORNER SHELF</div><div style="font-size:9px;color:#60A5FA">Space • Chrome</div><div class="price">₦10,000</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Shelf%2010000">+ Add</a></div>
+<div class="card"><div class="img">TOWEL</div><div style="font-weight:700;font-size:12px">TOWEL RACK</div><div style="font-size:9px;color:#60A5FA">NEW • Bathroom</div><div class="price">₦8,000</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Towel%20Rack%208000">+ Add</a></div>
+<div class="card"><div class="img">CARROT</div><div style="font-weight:700;font-size:12px">CARROT SOAP</div><div style="font-size:9px;color:#60A5FA">Clean • Light</div><div class="price">₦3,500</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Carrot%20Soap">+ Add</a></div>
+<div class="card"><div class="img">SERUM</div><div style="font-weight:700;font-size:12px">LACTIC SERUM</div><div style="font-size:9px;color:#60A5FA">Dark Spot</div><div class="price">₦6,000</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Serum">+ Add</a></div>
+<div class="card full"><div style="display:flex;gap:12px;align-items:center"><div class="img" style="width:110px">BASKET</div><div style="text-align:left"><div style="font-weight:700">2-TIER FRUIT BASKET</div><div style="font-size:9px;color:#60A5FA">Chrome • Luxury</div><div class="price">₦9,500</div><a class="order" style="display:inline-block;padding:6px 18px" href="https://wa.me/2347010320816?text=I%20want%20Basket">+ Add</a></div></div></div>
 </div>
-
-<div class="list">
-<div class="card"><div class="img">VIT C</div><div><h3>Vitamin C Lotion</h3><div class="price">₦10,000</div><div class="benefit">Lightening • Bright icy glow</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Vitamin%20C%20Lotion%20N10000">Order</a></div></div>
-<div class="card"><div class="img">CERAMIDE</div><div><h3>Ceramide Cream 454ml</h3><div class="price">₦8,000</div><div class="benefit">Repairs broken barrier</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Ceramide%208000">Order</a></div></div>
-<div class="card"><div class="img">SHELF</div><div><h3>Corner Shelf</h3><div class="price">₦10,000</div><div class="benefit">Space saver chrome</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Corner%20Shelf%2010000">Order</a></div></div>
-<div class="card"><div class="img">TOWEL</div><div><h3>Towel Rack</h3><div class="price">₦8,000</div><div class="benefit">NEW • Bathroom luxury</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Towel%20Rack%208000">Order</a></div></div>
-<div class="card"><div class="img">CARROT</div><div><h3>Drip Carrot Soap</h3><div class="price">₦3,500</div><div class="benefit">Lightening soap</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Carrot%20Soap">Order</a></div></div>
-<div class="card"><div class="img">SERUM</div><div><h3>Lactic Serum 30ml</h3><div class="price">₦6,000</div><div class="benefit">Removes dark spot</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Lactic%20Serum">Order</a></div></div>
-<div class="card"><div class="img">BASKET</div><div><h3>2-Tier Fruit Basket</h3><div class="price">₦9,500</div><div class="benefit">Chrome kitchen luxury</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20Basket">Order</a></div></div>
 </div>
-
-<div class="footer">KAMS ESSENTIALS • REAL LIGHT BLUE #60A5FA • Silver Chrome • WhatsApp: 07010320816 • Nationwide (No Lagos)<br>✨ This one na bright light blue - not dark navy again! ✨</div>
 </body></html>
