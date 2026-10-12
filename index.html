@@ -1,50 +1,39 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KAMS ESSENTIALS - ICY LUXE</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>KAMS ESSENTIALS - REAL PICTURES</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',sans-serif;background:#0F172A;color:#E0F2FE}
-.bg{position:fixed;inset:0;background:radial-gradient(ellipse at top, #1E3A8A 0%, #172554 40%, #0F172A 100%);z-index:-2}
-.wrap{max-width:520px;margin:0 auto;padding:12px}
-.top{display:flex;justify-content:space-between;align-items:center;background:rgba(15,23,42,0.85);backdrop-filter:blur(20px);padding:12px 16px;border-radius:30px;border:1px solid rgba(59,130,246,0.3)}
-.hero{margin:16px 0;background:linear-gradient(135deg, rgba(30,58,138,0.5), rgba(15,23,42,0.9));border:1px solid rgba(59,130,246,0.3);border-radius:20px;padding:18px;display:flex;justify-content:space-between;align-items:center}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',sans-serif;background:#020617;color:#E2E8F0}
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at top,#1E3A8A 0%,#020617 70%);z-index:-2}
+.wrap{max-width:540px;margin:0 auto;padding:12px}
+.top{display:flex;justify-content:space-between;align-items:center;background:rgba(15,23,42,0.9);padding:12px 16px;border-radius:30px;border:1px solid rgba(59,130,246,0.3);position:sticky;top:8px;z-index:10}
+.hero{margin:16px 0;background:linear-gradient(135deg,rgba(30,58,138,0.5),rgba(2,6,23,0.9));border:1px solid rgba(59,130,246,0.3);border-radius:20px;padding:20px;text-align:center}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:rgba(30,58,138,0.25);backdrop-filter:blur(16px);border:1px solid rgba(96,165,250,0.3);border-radius:16px;padding:12px;text-align:center;position:relative}
-.card .img{width:100%;height:100px;background:#0F172A;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(96,165,250,0.3)}
-.card .img img{width:100%;height:100%;object-fit:cover}
-.price{color:#60A5FA;font-weight:800;font-size:14px;margin-top:4px}
-.order{display:block;margin-top:8px;background:#E0F2FE;color:#0F172A;padding:7px;border-radius:20px;font-size:10px;font-weight:800;text-decoration:none}
-.full{grid-column:1 / -1}
+.card{background:rgba(15,23,42,0.8);border:1px solid rgba(59,130,246,0.3);border-radius:16px;padding:10px;text-align:center;position:relative}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:12px;background:#1E293B}
+.price{color:#60A5FA;font-weight:800;margin:6px 0;font-size:15px}
+.order{display:block;background:#fff;color:#020617;padding:8px;border-radius:20px;font-weight:800;text-decoration:none;font-size:11px;margin-top:6px}
+.badge{position:absolute;top:8px;left:8px;background:#60A5FA;color:#000;font-size:8px;font-weight:800;padding:3px 8px;border-radius:20px}
+.full{grid-column:1/-1}
 </style></head><body>
 <div class="bg"></div>
 <div class="wrap">
-<div class="top"><div style="font-family:'Syne',sans-serif;font-weight:800;color:#93C5FD">KAMS ESSENTIALS ✨</div><a href="https://wa.me/2347010320816" style="background:#25D366;color:#fff;padding:6px 12px;border-radius:20px;text-decoration:none;font-size:11px">WhatsApp</a></div>
-<div class="hero"><div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:16px">ICY LUXE — NEW DROP</div><div style="font-size:10px;color:#93C5FD">7 products • Auto-updates when she uploads new one</div></div><div style="font-size:32px">💙</div></div>
-<div class="grid" id="productGrid"></div>
-<div style="text-align:center;padding:20px;font-size:9px;color:#3B82F6">KAMS • 07010320816 • <a href="admin.html" style="color:#3B82F6">Admin Login</a></div>
+<div class="top"><div style="font-family:'Syne',sans-serif;font-weight:800;color:#93C5FD;letter-spacing:1px">KAMS ESSENTIALS ✨</div><a href="https://wa.me/2347010320816?text=Hi%20KAMS%20I%20want%20to%20order" style="background:#25D366;color:#fff;padding:6px 14px;border-radius:20px;text-decoration:none;font-size:11px;font-weight:700">WhatsApp</a></div>
+<div class="hero"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px">REAL PICTURES 💙</div><div style="font-size:11px;color:#93C5FD;margin-top:4px">7 products with your real photos • Correct prices</div></div>
+<div class="grid" id="grid"></div>
+<div style="text-align:center;padding:20px;font-size:10px;color:#64748B">WhatsApp: 07010320816 • <a href="admin.html" style="color:#60A5FA">Admin Login</a></div>
 </div>
 <script>
-const defaultProducts=[
-{id:1,name:"Vitamin C Lotion",price:10000,cat:"Lighten",imgText:"VIT C"},
-{id:2,name:"Ceramide Cream 454ml",price:8000,cat:"Barrier Repair",imgText:"CERAMIDE"},
-{id:3,name:"Corner Shelf",price:10000,cat:"Space Saver",imgText:"SHELF"},
-{id:4,name:"Towel Rack",price:8000,cat:"NEW Bathroom",imgText:"TOWEL"},
-{id:5,name:"Drip Carrot Soap",price:3500,cat:"Lightening Soap",imgText:"CARROT"},
-{id:6,name:"Lactic Serum 30ml",price:6000,cat:"Dark Spot",imgText:"SERUM"},
-{id:7,name:"2-Tier Fruit Basket",price:9500,cat:"Chrome Luxury",imgText:"BASKET"}
+const defaults=[
+{n:"Vitamin C Body Lotion 400ml",p:10000,c:"Brighten • Vegan",img:"images/vitamin-c.jpg"},
+{n:"Ceramide Moisturising Cream 454ml",p:8000,c:"5 Ceramides • 454ml",img:"images/ceramide.jpg"},
+{n:"Black Corner Shelf 2-Tier",p:10000,c:"Bathroom Storage",img:"images/corner-shelf.jpg"},
+{n:"Towel Rack with Hooks",p:8000,c:"Wall Mount • Stainless",img:"images/towel-rack.jpg"},
+{n:"Drip Carrot Brightening Soap",p:3500,c:"Carrot • 2 Bars",img:"images/carrot-soap.jpg"},
+{n:"Lactic Acid AHA Serum 30ml",p:6000,c:"3% AHA • Glow",img:"images/serum.jpg"},
+{n:"2-Tier Fruit Basket Wood Handle",p:9500,c:"Modern • Storage",img:"images/basket.jpg"}
 ];
-function loadProducts(){
-let stored=JSON.parse(localStorage.getItem('kams_products')||'null');
-return stored||defaultProducts;
-}
-function render(){
-let products=loadProducts();
-let grid=document.getElementById('productGrid');
-grid.innerHTML=products.map((p,i)=>{
-let imgContent=p.imgBase64?`<img src="${p.imgBase64}">`:p.imgText;
-let fullClass=(i===products.length-1 && products.length%2!==0)?' full':'';
-return `<div class="card ${fullClass}"><div class="img">${imgContent}</div><div style="font-weight:700;font-size:12px;margin-top:6px">${p.name}</div><div style="font-size:9px;color:#60A5FA">${p.cat}</div><div class="price">₦${p.price.toLocaleString()}</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20${encodeURIComponent(p.name)}%20N${p.price}">Order - ₦${p.price.toLocaleString()}</a></div>`;
-}).join('');
-}
+function load(){let s=localStorage.getItem('kams_real_v4');if(s){try{let a=JSON.parse(s);if(a.length>0)return a}catch(e){}}return defaults;}
+function render(){let data=load();document.getElementById('grid').innerHTML=data.map((d,i)=>`<div class="card ${i===data.length-1&&data.length%2!==0?'full':''}"><span class="badge">#${i+1}</span><img src="${d.img}" onerror="this.src='https://via.placeholder.com/300x200/1E3A8A/60A5FA?text=${encodeURIComponent(d.n)}'"><div style="font-size:12px;font-weight:700;margin-top:8px">${d.n}</div><div style="font-size:9px;color:#60A5FA">${d.c}</div><div class="price">₦${d.p.toLocaleString()}</div><a class="order" href="https://wa.me/2347010320816?text=I%20want%20${encodeURIComponent(d.n)}%20N${d.p}">Order Now - ₦${d.p.toLocaleString()}</a></div>`).join('');}
 render();
 </script>
 </body></html>
