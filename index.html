@@ -1,2 +1,47 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kamsessentials</title><style>body{margin:0;font-family:Arial;background:#fff8f0;text-align:center}header{background:#000;color:gold;padding:25px}h1{margin:0}.products{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}.card{background:#fff;border-radius:10px;padding:8px}.card img{width:100%;height:200px;object-fit:cover;border-radius:8px}.btn{background:#000;color:gold;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;font-weight:bold}footer{background:#000;color:#fff;padding:15px;margin-top:15px}</style></head><body><header><h1>KAMSESSENTIALS</h1><p>Lagos Delivery</p></header><div id="p" class="products">Loading...</div><footer>WhatsApp Order Available</footer><script>fetch('https://api.github.com/repos/Zipporah1510/kamsessentials/contents').then(r=>r.json()).then(fs=>{const imgs=fs.filter(f=>/\.(jpg|jpeg|png|webp)$/i.test(f.name));document.getElementById('p').innerHTML=imgs.map(f=>`<div class=card><img src="${f.name}"><br><b>${f.name.split('.')[0]}</b><br><a class=btn href="https://wa.me/2340000000000">Order</a></div>`).join('')})</script></body></html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kamsessentials</title>
+<style>
+body{margin:0;font-family:Arial;background:#fff8f0;text-align:center}
+header{background:#002366;color:gold;padding:25px}
+h1{margin:0;font-family:"Lucida Handwriting",cursive}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.card{background:#fff;border-radius:12px;padding:10px;border:2px solid gold}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:8px;background:#eee}
+.btn{background:#002366;color:gold;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;font-weight:bold}
+footer{background:#002366;color:#fff;padding:15px;margin-top:15px}
+</style>
+</head>
+<body>
+<header>
+<h1>KAMSESSENTIALS</h1>
+<p>Luxury Skincares • Nationwide Delivery</p>
+</header>
+
+<h2>Our Collection</h2>
+<div id="p" class="products">Loading your products...</div>
+
+<footer>Order on WhatsApp</footer>
+
+<script>
+fetch('https://api.github.com/repos/Zipporah1510/kamsessentials/contents')
+.then(r=>r.json())
+.then(files=>{
+  const imgs = files.filter(f=>/\.(jpg|jpeg|png|webp)$/i.test(f.name));
+  document.getElementById('p').innerHTML = imgs.map(f=>`
+    <div class="card">
+      <img src="${f.name}">
+      <br>
+      <b>${f.name.split('.')[0].replace(/-|_/g,' ')}</b>
+      <br>
+      <a class="btn" href="https://wa.me/2347010320816">Order</a>
+    </div>
+  `).join('');
+});
+</script>
+
+</body>
+</html>
