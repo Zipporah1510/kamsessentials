@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KAMS - Admin Upload</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',sans-serif;background:#0F172A;color:#fff;padding:14px;max-width:500px;margin:0 auto}
+.box{background:rgba(30,58,138,0.3);border:1px solid rgba(96,165,250,0.3);border-radius:16px;padding:16px;margin-bottom:16px}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#1E293B;color:#fff;margin:8px 0;font-family:'Poppins',sans-serif}
+.btn{width:100%;padding:12px;background:#60A5FA;color:#0F172A;border:none;border-radius:30px;font-weight:800;margin-top:10px;cursor:pointer}
+.card{background:rgba(255,255,255,0.05);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.card img{width:50px;height:50px;border-radius:8px;object-fit:cover;background:#1E293B}
+.del{background:#ef4444;color:#fff;border:none;padding:6px 10px;border-radius:20px;font-size:10px}
+</style></head><body>
+<h2 style="text-align:center;margin:16px 0">💙 KAMS ADMIN - Upload Product</h2>
+<div class="box">
+<label>Product Name</label><input id="name" placeholder="e.g. Pink Lip Balm">
+<label>Price (₦)</label><input id="price" type="number" placeholder="e.g. 8000">
+<label>Category / Description</label><input id="cat" placeholder="e.g. NEW • Skincare">
+<label>Product Picture (from phone)</label><input id="file" type="file" accept="image/*">
+<img id="preview" style="width:100%;max-height:150px;object-fit:cover;border-radius:10px;display:none;margin-top:10px">
+<button class="btn" onclick="addProduct()">+ ADD PRODUCT TO WEBSITE</button>
+<div style="font-size:10px;color:#93C5FD;margin-top:10px;text-align:center">After you add, open main site - e go show automatically! No need to call developer.</div>
+</div>
+<h3 style="margin:10px 0">Current Products (<span id="count">0</span>)</h3>
+<div id="list"></div>
+<button onclick="resetDefault()" style="width:100%;margin-top:20px;background:transparent;border:1px solid #334155;color:#94A3B8;padding:10px;border-radius:20px">Reset to Default 7 Products</button>
+<div style="text-align:center;margin-top:20px"><a href="index.html" style="color:#60A5FA;text-decoration:none">← Go to Main Website</a></div>
+
+<script>
+const defaultProducts=[
+{id:1,name:"Vitamin C Lotion",price:10000,cat:"Lighten",imgText:"VIT C"},
+{id:2,name:"Ceramide Cream 454ml",price:8000,cat:"Barrier Repair",imgText:"CERAMIDE"},
+{id:3,name:"Corner Shelf",price:10000,cat:"Space Saver",imgText:"SHELF"},
+{id:4,name:"Towel Rack",price:8000,cat:"NEW Bathroom",imgText:"TOWEL"},
+{id:5,name:"Drip Carrot Soap",price:3500,cat:"Lightening Soap",imgText:"CARROT"},
+{id:6,name:"Lactic Serum 30ml",price:6000,cat:"Dark Spot",imgText:"SERUM"},
+{id:7,name:"2-Tier Fruit Basket",price:9500,cat:"Chrome Luxury",imgText:"BASKET"}
+];
+let imgBase64="";
+document.getElementById('file').addEventListener('change',function(e){
+let file=e.target.files[0];
+if(!file)return;
+let reader=new FileReader();
+reader.onload=function(ev){imgBase64=ev.target.result;let prev=document.getElementById('preview');prev.src=imgBase64;prev.style.display='block';}
+reader.readAsDataURL(file);
+});
+function getProducts(){return JSON.parse(localStorage.getItem('kams_products')||'null')||defaultProducts;}
+function saveProducts(p){localStorage.setItem('kams_products',JSON.stringify(p));renderList();}
+function renderList(){
+let products=getProducts();
+document.getElementById('count').innerText=products.length;
+document.getElementById('list').innerHTML=products.map((p,i)=>`
+<div class="card">
+${p.imgBase64?`<img src="${p.imgBase64}">`:`<div style="width:50px;height:50px;background:#1E3A8A;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:9px">${p.imgText||'IMG'}</div>`}
+<div style="flex:1"><div style="font-size:12px;font-weight:600">${p.name}</div><div style="font-size:10px;color:#94A3B8">₦${p.price} • ${p.cat}</div></div>
+<button class="del" onclick="del(${i})">Delete</button>
+</div>`).join('');
+}
+function addProduct(){
+let name=document.getElementById('name').value.trim();
+let price=parseInt(document.getElementById('price').value);
+let cat=document.getElementById('cat').value.trim()||"New Product";
+if(!name||!price){alert("Abeg fill Name and Price!");return;}
+let products=getProducts();
+products.push({id:Date.now(),name,price,cat,imgBase64,imgText:name.substring(0,5).toUpperCase()});
+saveProducts(products);
+document.getElementById('name').value="";document.getElementById('price').value="";document.getElementById('cat').value="";document.getElementById('file').value="";document.getElementById('preview').style.display='none';imgBase64="";
+alert("✅ Added! Go check main site - e don show!");
+}
+function del(i){if(confirm("Delete this product?")){let p=getProducts();p.splice(i,1);saveProducts(p);}}
+function resetDefault(){if(confirm("Reset to original 7 products?")){localStorage.removeItem('kams_products');renderList();}}
+renderList();
+</script>
+</body></html>
